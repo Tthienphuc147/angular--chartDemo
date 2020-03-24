@@ -20,20 +20,17 @@ export class AppComponent {
       const title = chart.titles.create();
       title.text = "Product Sales by Area";
 
-      let data = [
-        {
-          "area": "Florida", "computers": 20, "cars": 50, "boats":60
-        },
-        {
-          "area": "Florida1", "computers": 30, "cars": 20, "boats":15
-        },
-        {
-          "area": "Florida2", "computers": 50, "cars": 40, "boats":65
-        },
-        {
-          "area": "Florida3", "computers": 10, "cars": 50, "boats":35
+      let data = [];
+      for(let i=0;i<50;i++){
+        let item={
+          area: `Forida ${i}`,
+          computers: Math.random()*i,
+          cars: Math.random()*i,
+          boats: Math.random()*i
         }
-      ];
+        data.push(item);
+
+      }
       chart.data = data;
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
       categoryAxis.title.text = "Area";
